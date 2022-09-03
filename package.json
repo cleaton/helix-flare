@@ -40,7 +40,7 @@
   "scripts": {
     "build": "tsup",
     "test": "NODE_OPTIONS=--experimental-vm-modules yarn jest --forceExit",
-    "prepare": "yarn tsc --noEmit && yarn test && yarn build"
+    "prepare": "tsup"
   },
   "prettier": {
     "singleQuote": true,
