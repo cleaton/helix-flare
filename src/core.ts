@@ -59,6 +59,9 @@ const core = async <TContext>({
       return getResponse(result, headers)
     case 'PUSH':
       // @todo cors headers
+      if (result.context?.___stream_response) {
+        return result.context.___stream_response
+      }
       return getPushResponseSSE(result, request)
     case 'MULTIPART_RESPONSE':
       return getMultipartResponse(result, Response, ReadableStream as any)
